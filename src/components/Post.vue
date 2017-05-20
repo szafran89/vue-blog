@@ -33,7 +33,7 @@
   };
 </script>
 
-<style>
+<style lang="scss">
   .post {
     text-align: left;
   }
