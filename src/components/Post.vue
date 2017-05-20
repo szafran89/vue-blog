@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div class="post">
     <h1>
       {{ post.title }}
     </h1>
-    <div>
-      {{ post.body }}
-    </div>
+    <vue-markdown :source="this.post.body"></vue-markdown>
   </div>
 </template>
 
 <script>
+  import VueMarkdown from 'vue-markdown';
+
   export default {
     name: 'post',
     data() {
@@ -27,5 +27,14 @@
         },
       );
     },
+    components: {
+      VueMarkdown,
+    },
   };
 </script>
+
+<style>
+  .post {
+    text-align: left;
+  }
+</style>
