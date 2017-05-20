@@ -4,7 +4,7 @@
     <ul class="list-group">
       <li class="list-group-item"
           v-for="post in posts">
-        {{ post }}
+        {{ post.fields.title }}
       </li>
     </ul>
   </div>
@@ -15,12 +15,19 @@
     name: 'posts',
     data() {
       return {
-        posts: ['111', 222],
+        posts: [],
       };
+    },
+    created() {
+      this.$config.client.getEntries({
+        content_type: this.$config.contentTypes.posts,
+      }).then(
+        response => {
+          this.posts = response.items;
+          // eslint-disable-next-line
+          console.log(this.posts);
+        },
+      );
     },
   };
 </script>
-
-<style lang="css">
-
-</style>
