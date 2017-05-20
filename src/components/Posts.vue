@@ -1,12 +1,11 @@
-<template lang="html">
+<template>
   <div>
     <h1>Posts</h1>
-    <ul class="list-group">
-      <li class="list-group-item"
-          v-for="post in posts">
+    <div v-for="post in posts">
+      <router-link :to="{ name: 'post', params: { slug: post.fields.slug }}">
         {{ post.fields.title }}
-      </li>
-    </ul>
+      </router-link>
+    </div>
   </div>
 </template>
 
