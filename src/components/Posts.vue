@@ -1,10 +1,19 @@
 <template>
   <div>
-    <h1>Posts</h1>
-    <div v-for="post in posts">
-      <router-link :to="{ name: 'post', params: { slug: post.fields.slug }}">
-        {{ post.fields.title }}
-      </router-link>
+    <div class="box" v-for="post in posts">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <router-link :to="{ name: 'post', params: { slug: post.fields.slug }}">
+              <strong>
+                {{ post.fields.title }}
+              </strong>
+            </router-link>
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </template>

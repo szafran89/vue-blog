@@ -1,25 +1,26 @@
 <template>
   <div id="app">
-    <router-link :to="{ name: 'home' }">
-      <img src="./assets/logo.png">
-    </router-link>
-    <router-view></router-view>
+    <page-header></page-header>
+    <section class="section">
+      <div class="container">
+        <router-view></router-view>
+      </div>
+    </section>
+    <page-footer></page-footer>
   </div>
 </template>
 
 <script>
+  import PageHeader from '@/components/PageHeader';
+  import PageFooter from '@/components/PageFooter';
+
   export default {
     name: 'app',
+    components: {
+      PageHeader,
+      PageFooter,
+    },
   };
 </script>
 
-<style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
-</style>
+<style lang="scss" src="bulma"></style>
