@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "contentful": "^4.3.0",
+    "github-markdown-css": "^2.6.0",
     "vue": "^2.2.6",
     "vue-config": "^1.0.0",
     "vue-markdown": "^2.1.3",

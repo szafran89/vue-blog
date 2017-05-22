@@ -1,9 +1,11 @@
 <template>
   <div class="post">
-    <h1>
-      {{ post.title }}
-    </h1>
-    <vue-markdown :source="this.post.body"></vue-markdown>
+    <article class="markdown-body">
+      <h1>
+        {{ post.title }}
+      </h1>
+      <vue-markdown :source="this.post.body"></vue-markdown>
+    </article>
   </div>
 </template>
 
@@ -33,7 +35,7 @@
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" src="github-markdown-css">
   .post {
     text-align: left;
   }
